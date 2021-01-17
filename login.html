@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Practical -> Login</title>
+    <style>
+        body {
+            background: rgb(83, 54, 129);
+            background: linear-gradient(335deg, rgba(83, 54, 129, 1) 14%, rgba(34, 43, 140, 1) 100%);
+        }
+        .size {
+            padding: 10%;
+        }
+        @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+            .jumbotron {
+                -webkit-backdrop-filter: blur(3.5px);
+                backdrop-filter: blur(3.2px);
+                background-color: rgba(255, 255, 255, 0.5);
+                color: #2e2e2e;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container size">
+            <center><h2 style="color: white;">Login Page</h2></center>
+            <form id="User-login-form">
+                <div class="form-group">
+                    <label for="exampleUsernameInput">Username</label>
+                    <input type="text" class="form-control" id="exampleUsernameInput" name="UserName"
+                        aria-describedby="usernameHelp" placeholder="Enter Your Usename">
+                    <small id="usernameHelp" class="form-text text-muted">Never forgot your Username in any
+                        condition.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="Password" id="exampleInputPassword1"
+                        placeholder="Password">
+                </div>
+                <a type="submit" id="Form-Submit" class="btn btn-primary">Submit</a>
+            </form>
+        </div>
+    </div>
+    <script>
+        const loginForm = document.getElementById("User-login-form");
+        const loginButton = document.getElementById("Form-Submit");
+        const loginErrorMsg = document.getElementById("error-msg");
+
+        loginButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            const UserName = loginForm.UserName.value;
+            const Password = loginForm.Password.value;
+
+            if (UserName === "Aakash" && Password === "Aakash123") {
+                window.open("practical1.html");
+            } else {
+                alert("Invalid Username or // Password 🙏Please Try again Later.....")
+                return false;
+            }
+        })
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
